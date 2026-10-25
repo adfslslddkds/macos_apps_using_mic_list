@@ -13,11 +13,9 @@ while true {
             print("  Нет обнаруженных процессов.")
         } else {
             for process in processes {
-                print(
-                    "  $process.name ?? "Неизвестное приложение")" +
-                    " — PID $process.pid)" +
-                    " — $process.bundleIdentifier ?? "без Bundle ID")"
-                )
+                let name = process.name ?? "Unkonwn application"
+                let bundleID = process.bundleIdentifier ?? "No Bundle ID"
+                print(" $name) - PID $process.pid) - $bundleID)")
             }
         }
     } catch {
